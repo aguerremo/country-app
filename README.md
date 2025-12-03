@@ -1,59 +1,125 @@
-# CountryApp
+# 🌍 Country Explorer
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+A modern Angular application for exploring countries worldwide with advanced features and real-time data.
 
-## Development server
+## ✨ Features
 
-To start a local development server, run:
+### 🔍 Search & Filter
+- Search countries by name, capital, or region
+- Real-time search with debounce
+- Filter by continent (Africa, Americas, Asia, Europe, Oceania)
 
+### 📱 Responsive Design
+- Mobile-first approach
+- Fully responsive layout
+- Optimized for all devices
+
+### 🚀 Performance
+- Lazy loading of modules
+- Efficient API caching
+- Optimized bundle size
+
+### 🔧 Technical Highlights
+- Angular 17+ with TypeScript
+- Reactive programming with RxJS
+- Modular and scalable architecture
+- Clean component hierarchy
+
+## 🛠️ Technologies Used
+
+- **Framework:** Angular 17+
+- **Language:** TypeScript
+- **State Management:** RxJS
+- **Styling:** CSS3 / SASS
+- **API:** [REST Countries API](https://restcountries.com/)
+- **Build Tool:** Angular CLI
+- **Package Manager:** npm
+
+## 📦 Installation & Setup
+
+### Prerequisites
+- Node.js 18+ 
+- npm 9+ or yarn
+
+### Quick Start
 ```bash
-ng serve
+# Clone the repository
+git clone https://github.com/aguerremo/country-app.git
+
+# Navigate to project
+cd country-app
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Open http://localhost:4200 in your browser
+````
+
+## 🚀 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm start` | Start development server |
+| `npm run build` | Build for production |
+| `npm test` | Run unit tests |
+| `npm run lint` | Run code linting |
+
+## 📁 Project Structure
+```bash
+src/
+├── app/
+│ ├── country/ # Country feature module
+│ ├── shared/ # Shared components & services
+│ ├── core/ # Core module (singletons)
+│ ├── pages/ # Main pages components
+│ ├── app.routes.ts # Application routing
+│ └── app.config.ts # App configuration
+├── assets/ # Static assets
+└── styles/ # Global styles
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🎯 Features in Development
 
-## Code scaffolding
+### Planned Enhancements
+- [ ] Dark/Light theme toggle
+- [ ] Favorites system with localStorage
+- [ ] Country comparison tool
+- [ ] Interactive maps integration
+- [ ] Data visualization charts
+- [ ] Offline mode support
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Current Focus
+Implementing **dark mode** and **favorites functionality** to enhance user experience.
 
-```bash
-ng generate component component-name
-```
+## 🤝 Contributing
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-```bash
-ng generate --help
-```
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Building
+## 📄 License
 
-To build the project run:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```bash
-ng build
-```
+## 👤 Author
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+**Álvaro Guerreiro**  
+- GitHub: [@aguerremo](https://github.com/aguerremo)
+- Portfolio: [Coming Soon]
 
-## Running unit tests
+## 🙏 Acknowledgments
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- [REST Countries API](https://restcountries.com/) for the amazing free API
+- Angular team for the fantastic framework
+- Fernando Herrera for excellent Angular educational content
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+⭐ **Star this repo if you find it useful!**
