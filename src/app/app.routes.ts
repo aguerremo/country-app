@@ -1,4 +1,3 @@
-import { countryRoutes } from './country/country.routes';
 import { Routes } from '@angular/router';
 import { HomePage } from './shared/pages/home-page/home-page';
 

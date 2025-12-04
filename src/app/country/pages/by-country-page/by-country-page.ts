@@ -6,11 +6,8 @@ import { List } from "../../components/list/country-list";
 
 
 @Component({
-  selector: 'app-by-capital-page',
+  selector: 'app-by-country-page',
   imports: [CountryTopMenu, RouterOutlet, SearchInput, List],
-  templateUrl: './by-capital-page.html',
+  templateUrl: './by-country-page.html',
 })
-export class ByCapitalPage {
-
-
-}
+export class ByCountryPage { }
