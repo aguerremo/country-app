@@ -12,8 +12,4 @@ export class SearchInput {
 
   placeholder = input('Buscar')
 
-  onSearch(value:string){
-    console.log(value)
-  }
-
 }
