@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CountryTopMenu } from "../../components/country-top-menu/country-top-menu";
 import { RouterOutlet } from '@angular/router';
 import { SearchInput } from "../../components/search-input/search-input";
 import { List } from "../../components/list/country-list";
 import { CountryService } from '../../services/country.service';
+import { RESTCountry } from '../../interfaces/rest-countries.interfaces';
 
 
 @Component({
@@ -14,11 +15,22 @@ import { CountryService } from '../../services/country.service';
 export class ByCapitalPage {
 
   countryService = inject(CountryService)
+  isLoading = signal(false)
+  isError = signal<string|null>(null)
+  countries = signal<RESTCountry[]>([])
 
   onSearch(query: string) {
+    if (this.isLoading()) {
+      return
+    }
+
     this.countryService.getCountry(query)
-      .subscribe(resp => {
-        console.log(resp)
+      .subscribe(country => {
+
+        this.isLoading.set(false)
+        this.countries.set(country)
+
+        console.log(country)
       })
   }
 

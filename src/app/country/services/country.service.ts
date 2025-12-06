@@ -1,3 +1,4 @@
+import { RESTCountry } from './../interfaces/rest-countries.interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 
@@ -16,8 +17,7 @@ export class CountryService {
 
    getCountry(query:string) {
     query = query.toLowerCase()
-   return this.http.get(`${API_URL}/capital/${query}`)
-
+   return this.http.get<RESTCountry[]>(`${API_URL}/capital/${query}`)
    }
 
 }
