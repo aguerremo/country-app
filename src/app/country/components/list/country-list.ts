@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, input, signal } from '@angular/core';
-import { RESTCountry } from '../../interfaces/rest-countries.interfaces';
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'app-country-list',
@@ -9,5 +9,5 @@ import { RESTCountry } from '../../interfaces/rest-countries.interfaces';
 })
 export class List {
 
-  countries = input<RESTCountry[]>([])
- }
+  countries = input<Country[]>([])
+}

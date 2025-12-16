@@ -18,10 +18,14 @@
 
         <th>{{index + 1}}</th>
         <th>{{country.flag}}</th>
-        <th><img class="max-w-15" src="{{country.flags.svg}}" alt="{{country.name.common}}"></th>
-        <th>{{country.name.common}}</th>
+        <th><img class="max-w-15" src="{{country.flagSvg}}" alt="{{country.name}}"></th>
+        <th>{{country.name}}</th>
         <th>{{country.capital}}</th>
-        <th>{{country.population}}</th>
+        <th>
+          <span class="badge badge-secondary">
+          {{country.population}}
+          </span>
+        </th>
         <th></th>
 
 
