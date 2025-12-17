@@ -1,13 +1,28 @@
-import { Component } from '@angular/core';
-import { CountryTopMenu } from "../../components/country-top-menu/country-top-menu";
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, resource, signal } from '@angular/core';
 import { SearchInput } from "../../components/search-input/search-input";
 import { List } from "../../components/list/country-list";
+import { CountryService } from '../../services/country.service';
+import { firstValueFrom } from 'rxjs';
 
 
 @Component({
   selector: 'app-by-country-page',
-  imports: [CountryTopMenu, RouterOutlet, SearchInput, List],
+  imports: [ SearchInput, List],
   templateUrl: './by-country-page.html',
 })
-export class ByCountryPage { }
+export class ByCountryPage {
+
+  countryService = inject(CountryService)
+  query = signal('')
+
+  queryValue(query: string){
+    if (!query) return [];
+    return firstValueFrom(this.countryService.searchByCountry(query))
+  }
+
+  countryResource = resource({
+    params: () => ({ query: this.query() }),
+    loader: async ({ params }) => this.queryValue(params.query)
+  })
+
+}

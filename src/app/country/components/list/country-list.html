@@ -26,7 +26,11 @@
           {{country.population | number}}
           </span>
         </th>
-        <th></th>
+        <th>
+          <a [routerLink]="['/country/by/{{country.cca2}']">
+            Más información
+          </a>
+        </th>
 
 
       </tr>

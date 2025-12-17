@@ -1,8 +1,8 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, resource, signal } from '@angular/core';
 import { SearchInput } from "../../components/search-input/search-input";
 import { List } from "../../components/list/country-list";
 import { CountryService } from '../../services/country.service';
-import { Country } from '../../interfaces/country.interface';
+import { firstValueFrom } from 'rxjs';
 
 
 @Component({
@@ -13,23 +13,16 @@ import { Country } from '../../interfaces/country.interface';
 export class ByCapitalPage {
 
   countryService = inject(CountryService)
-  isLoading = signal(false)
-  isError = signal<string | null>(null)
-  countries = signal<Country[]>([])
+  query = signal('')
 
-  onSearch(query: string) {
-    if (this.isLoading()) {
-      return
-    }
-
-    this.countryService.getCountry(query)
-      .subscribe(country => {
-
-        this.isLoading.set(false)
-        this.countries.set(country)
-
-        console.log(country)
-      })
+  queryValue(query: string){
+    if (!query) return [];
+    return firstValueFrom(this.countryService.searchByCapital(query))
   }
+
+  countryResource = resource({
+    params: () => ({ query: this.query() }),
+    loader: async ({ params }) => this.queryValue(params.query)
+  })
 
 }
