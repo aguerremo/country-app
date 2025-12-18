@@ -1,0 +1,54 @@
+<section class="mx-10">
+
+  <h1 class="text-3xl">{{country().flag}} {{country().name}}</h1>
+  <p class="font-extralight text-xs italic mb-10">{{country().official}}</p>
+
+
+</section>
+<section>
+ <div class="stats shadow">
+  <div class="stat place-items-center">
+    <div class="stat-title">Capital</div>
+    <div class="stat-value">{{country().capital}}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Población</div>
+    <div class="stat-value text-secondary">{{country().population | number}}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Continente</div>
+    <div class="stat-value">{{country().continent}}</div>
+  </div>
+</div>
+</section>
+
+<section class="mx-10 mt-10">
+  <h3 class="text-2xl text-secondary font-bold">Bandera:</h3>
+
+  <div class="hover-3d m-10">
+  <!-- content -->
+  <figure class="max-w-100 rounded-2xl">
+    <img src="{{country().flagSvg}}" alt="3D card" />
+  </figure>
+  <!-- 8 empty divs needed for the 3D effect -->
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+@if (country().flags) {
+  <h1 class="text-2xl text-secondary font-bold">Información de la bandera:</h1>
+  <h3 class="text-xl">{{country().flags}}</h3>
+}
+
+
+</section>
+
+
+

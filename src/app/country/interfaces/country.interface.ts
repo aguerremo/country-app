@@ -7,6 +7,9 @@ export interface Country {
   flagSvg: string,
   name: string,
   capital: string,
-  population: string,
+  population: number,
+  official: string,
+  continent: string[],
+  flags: string | undefined,
 
 }
